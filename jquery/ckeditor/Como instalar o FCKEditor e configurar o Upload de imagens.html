@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h1 id="post-359"><a href="http://www.leobaiano.com/como-instalar-o-fckeditor-e-configurar-o-upload-de-imagens.html" rel="bookmark" title="Permanent Link: Como instalar o FCKEditor e configurar o Upload de imagens">Como instalar o FCKEditor e configurar o Upload de imagens</a></h1>
+<div>
+  <div>Postado por <strong><a href="http://www.leobaiano.com/author/admin/" title="Posts de Leo Baiano">Leo Baiano</a></strong></div>
+  <div>17 de agosto de 2009</div>
+</div>
+<div></div>
+<p>O <strong>FCKEditor</strong> é um editor WYSIWYG, acrônico da expressão &ldquo;What You See Is What You Get&rdquo;, &ldquo;o que você vê é o que você tem&rdquo; em português. Sempre que precisei incluir um editor HTML em meus projetos optei pelo TinyMCE, que também é uma ótima ferramenta, mas a versão free do TinyMCE não permite o upload de imagens.</p>
+<p>Como nunca precisei desta função não pesquisei alternativas. Essa semana que passou precisei do upload e me indicaram o FCKEditor, gostei bastante e resolve escrever este post mostrando <strong>como instalar o FCKEditor</strong> e configurar o upload de imagens.</p>
+<p>A primeira coisa a fazer é baixar o FCKEditor no <a href="http://www.fckeditor.net/">site oficial</a> do projeto, depois você vai subir os arquivos para o seu servidor.</p>
+<div id="attachment_360"><a href="http://www.leobaiano.com/wp-content/uploads/2009/08/fckeditor.jpg"><img src="http://www.leobaiano.com/wp-content/uploads/2009/08/fckeditor-300x114.jpg" alt="fckeditor" title="fckeditor" width="300" height="114" /></a>
+  <p>fckeditor</p>
+</div>
+<h2>Instalando o FCKEditor</h2>
+<p>Agora vamos chamar o FCKEditor na página, para isto basta incluir a página assim:</p>
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td><pre>1  2  3  </pre></td>
+        <td><pre>&lt;?php  include_once(&quot;fckeditor/fckeditor.php&quot;);  ?&gt;</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Claro que você deve alterar o caminho entre aspas pelo caminho da pasta fckeditor.</p>
+<p>Depois disto basta chamar o FCKEditor dentro do seu formulário da seguinte forma:</p>
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td><pre>1  2  3  4  5  6  </pre></td>
+        <td><pre>&lt;?php  $oFCKeditor = new FCKeditor('fckeditor1') ;  $oFCKeditor-&gt;BasePath = 'fckeditor/' ;  $oFCKeditor-&gt;Value = $codigo['codigo'];  $oFCKeditor-&gt;Create() ;  ?&gt;</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Logo na primeira linha você deve alterar o &ldquo;fckeditor1″ pelo nome do campo do seu formulário.</p>
+<h2>Upload de imagens no FCKEditor</h2>
+<p>Pronto, você já tem um campo com editor HTML, agora vamos configurar para que o upload de imagens possa funcionar. Abra o arquivo fckeditor/editor/connectors/php/config.php e localize as linhas:</p>
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td><pre>1  </pre></td>
+        <td><pre>$config['Enabled'] = false;</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Mude para:</p>
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td><pre>1  </pre></td>
+        <td><pre>$config['Enabled'] = true;</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Na linha:</p>
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td><pre>1  </pre></td>
+        <td><pre>$Config['UserFilesPath'] = '';</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Você deve informar o endereço da pasta onde as imagens serão armazenadas, com http://www e tudo… assim:</p>
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td><pre>1  </pre></td>
+        <td><pre>$Config['UserFilesPath'] = 'http://www.seusite.com.br/imagens/';</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Não esqueça da barra no final.</p>
+<p>Por fim altere a linha:</p>
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td><pre>1  </pre></td>
+        <td><pre>$Config['UserFilesAbsolutePath'] = '';</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Inserindo o caminho absoluto no servidor da pasta onde as imagens serão armazenadas, maisou menos assim:</p>
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td><pre>1  </pre></td>
+        <td><pre>$Config['UserFilesAbsolutePath'] = '/home/seusite/public_html/imagem/';</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Feito isto crie a pasta &ldquo;imagem&rdquo; e mude a permissão para 777.</p>
+<p>Pronto, o FCKEditor já esta funcionando com upload de imagens e tudo mais.</p>
+<p>Qualquer dúvida pode vir aqui que terei o prazer em ajudar no que puder.</p>
+<p><strong>[update 2/06/2010]</strong><br />
+  O TigreBR falou nos comentários que estava com dificuldade para saber qual o caminho absoluto do servidor e tentou postar algum código que exibe o caminho, mas o código não apareceu porque o WordPrees não permite código nos comentários então tentarei ajudar.</p>
+<p>Se você não sabe qual o caminho absoluto crie um arquivo chamado path.php com o seguinte código:</p>
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td><pre>1  2  3  </pre></td>
+        <td><pre>&lt;?php  echo getcwd();  ?&gt;</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Coloque o arquivo na raiz do seu site e acesse pelo navegador (www.seusite.com/path.php) para que ele imprima na tela o caminho absoluto do seu servidor.<br />
+  <strong>[update]</strong></p>
+</body>
+</html>

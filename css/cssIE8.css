@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Geral BASIC */
+/* 
+Nome das Fontes:  
+
+font-family: 'RamblaRegular';
+font-family: 'RamblaItalic';
+font-family: 'RamblaBold';
+font-family: 'RamblaBoldItalic';
+*/
+
+#topo {background:url(../images/bg_topo.png) center top no-repeat;}
+
+#slider {margin-top:-18px;}
+
+#slider ul li {}
+#slider ul li canvas {display:none !important;}
+#slider ul li img {display:block !important;}
+
+
+.main .ch-info {display:none !important;}
+
+#banner_interna canvas {display:none !important;}
+#banner_interna img {display:block !important;}
+
+
+#form_contato .colunas_3 .coluna {margin-right:20px;}

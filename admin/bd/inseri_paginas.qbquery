@@ -1,0 +1,7 @@
+﻿INSERT INTO `tb_paginas` (`pagina`,`imagem`,`label`,`exibir_menu`,`descricao`,`id_modulopagina`) VALUES
+ ('/admin/programas/altera.php',NULL,'Alterar','NAO',NULL,30),
+ ('/admin/programas/cadastra.php',NULL,'Cadastrar','SIM',NULL,30),
+ ('/admin/programas/exclui.php',NULL,'Excluir','NAO',NULL,30),
+ ('/admin/programas/lista.php',NULL,'Listar','SIM',NULL,30),
+ ('/admin/programas/envia_imagens.php',NULL,'Envia imagens','NAO',NULL,30),
+ ('/admin/programas/ativa_desativa.php',NULL,'Ativar e desativar','NAO',NULL,30);

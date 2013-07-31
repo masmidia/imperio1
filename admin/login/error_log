@@ -1,0 +1,2 @@
+[24-Nov-2012 18:33:46] PHP Fatal error:  Call to undefined method Login_Model::formulario_senha() in /home/masmidia/public_html/clientes/disklimp/admin/login/altera_senha.php on line 79
+[27-Nov-2012 10:10:54] PHP Warning:  Invalid argument supplied for foreach() in /home/masmidia/public_html/clientes/disklimp/admin/includes/lateral.php on line 14

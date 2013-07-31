@@ -1,0 +1,21 @@
+$.fn.ketchup.messages = {
+  'required':     'Esse campo é requerido.',
+  'cpf':     	  'CPF inv&aacute;lido.',
+  'hora':     	  'Hora incorreta',
+  'minlength':    'This field must have a minimal length of $arg1.',
+  'maxlength':    'This field must have a maximal length of $arg1.',
+  'rangelength':  'This field must have a length between $arg1 and $arg2.',
+  'min':          'Must be at least $arg1.',
+  'max':          'Can not be greater than $arg1.',
+  'range':        'Must be between $arg1 and $arg2.',
+  'number':       'Must be a number.',
+  'digits':       'O valor deve ser números.',
+  'email':        'Digite um email-válido.',
+  'url':          'Digite uma URL válida.',
+  'username':     'Informe um nome de usuário válido.',
+  'match':        'Os campos deve coincidir.',
+  'date':         'Informe uma data válida.',
+  'minselect':    'Selecione pelo menos $arg1 opção.',
+  'maxselect':    'Select not more than $arg1 checkboxes.',
+  'rangeselect':  'Select between $arg1 and $arg2 checkboxes.'
+};

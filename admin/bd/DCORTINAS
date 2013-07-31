@@ -1,0 +1,481 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.5.24-log
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema dcortinas
+--
+
+CREATE DATABASE IF NOT EXISTS dcortinas;
+USE dcortinas;
+
+--
+-- Definition of table `tb_acessorios`
+--
+
+DROP TABLE IF EXISTS `tb_acessorios`;
+CREATE TABLE `tb_acessorios` (
+  `idacessorio` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(80) NOT NULL,
+  `imagem` varchar(80) NOT NULL,
+  `descricao` longtext NOT NULL,
+  `keywords` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `ativo` varchar(3) NOT NULL DEFAULT 'SIM',
+  `ordem` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`idacessorio`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_acessorios`
+--
+
+/*!40000 ALTER TABLE `tb_acessorios` DISABLE KEYS */;
+INSERT INTO `tb_acessorios` (`idacessorio`,`titulo`,`imagem`,`descricao`,`keywords`,`description`,`ativo`,`ordem`) VALUES 
+ (1,'Ambientes de Vidro Temperado','0604201301271207107116.jpg','<p>\r\n	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper libero sed orci ultricies condimentum. Sed suscipit mollis mauris, non adipiscing lectus congue ac. In rhoncus, nunc eu laoreet eleifend, justo mauris pulvinar nisi, eget lacinia nulla augue in turpis. Praesent massa mi, pellentesque porta bibendum ac, viverra a quam. Suspendisse ut arcu risus. Aenean eu nulla nibh. Praesent eget mi nulla, eu sagittis nibh. Praesent faucibus imperdiet lectus, consequat ornare neque vehicula ac. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis aliquet vestibulum sem, et faucibus urna semper eget. Donec id enim sit amet massa congue varius mollis nec felis. Nulla posuere tortor congue urna tincidunt id molestie ipsum venenatis. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>','Acessorio Lorem ipsum dolor sit amet','Acessorio Lorem ipsum dolor sit amet, consectetur adipiscing elit.','SIM',0);
+/*!40000 ALTER TABLE `tb_acessorios` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tb_dicas`
+--
+
+DROP TABLE IF EXISTS `tb_dicas`;
+CREATE TABLE `tb_dicas` (
+  `iddica` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(80) NOT NULL,
+  `imagem` varchar(80) NOT NULL,
+  `descricao` longtext NOT NULL,
+  `keywords` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `ativo` varchar(3) NOT NULL DEFAULT 'SIM',
+  `ordem` int(10) unsigned NOT NULL,
+  `data` date NOT NULL,
+  PRIMARY KEY (`iddica`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_dicas`
+--
+
+/*!40000 ALTER TABLE `tb_dicas` DISABLE KEYS */;
+INSERT INTO `tb_dicas` (`iddica`,`titulo`,`imagem`,`descricao`,`keywords`,`description`,`ativo`,`ordem`,`data`) VALUES 
+ (3,'Como Escolher Cortinas da sua casa','0604201301171250707659.jpg','<p>\r\n	Suspendisse potenti. Sed placerat mauris quis arcu vam hendrerit aliquam. Aenean vitae nisl magna. Aliquamini elit sem, posuere a vestibulum vitae, hendrerit velaris fe.</p>','Suspendisse potenti','Suspendisse potenti. Sed placerat mauris quis arcu vam hendrerit aliquam. Aenean vitae nisl magna. Aliquamini elit sem, posuere a vestibulum vitae, hendrerit velaris fe.','SIM',0,'2013-04-06');
+/*!40000 ALTER TABLE `tb_dicas` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tb_empresa`
+--
+
+DROP TABLE IF EXISTS `tb_empresa`;
+CREATE TABLE `tb_empresa` (
+  `idempresa` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(80) NOT NULL,
+  `descricao` longtext NOT NULL,
+  `keywords` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `ativo` varchar(3) NOT NULL DEFAULT 'SIM',
+  `ordem` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`idempresa`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_empresa`
+--
+
+/*!40000 ALTER TABLE `tb_empresa` DISABLE KEYS */;
+INSERT INTO `tb_empresa` (`idempresa`,`titulo`,`descricao`,`keywords`,`description`,`ativo`,`ordem`) VALUES 
+ (1,'Sobre a D`Cortinas','<p>\r\n	A D&#39;Cortinas trabalha com seriedade, atendendo e decorando. Produtos modernos e atendimento pessoal personalizado. Estamos em aprimoramento constante, temos um alto n&iacute;vel de acabamento e qualidade de nossos produtos. Conhe&ccedil;a a D`Cortinas e supere as suas expectativas. Inove, decore. De cole&ccedil;&otilde;es de fibras naturais e materiais ecologicamente corretos, &agrave; facilidade da modernidade com produtos autom&aacute;ticos e inteligentes.</p>\r\n<p>\r\n	Nossa equipe qualificada, treinada e capacitada ir&aacute; mostrar &agrave; voc&ecirc; como melhorar o seu ambiente e trar&aacute; sofistica&ccedil;&atilde;o com &oacute;timos pre&ccedil;os e condi&ccedil;&otilde;es.</p>\r\n<p>\r\n	Trabalhamos com equipamentos de tecnologia de ponta e com manuten&ccedil;&atilde;o preventiva regular. Mantemos a qualidade e o bem estar do cliente. Estamos prontos para esclarecer as suas d&uacute;vidas e oferecemos op&ccedil;&otilde;es para seus sonhos e projetos. Isso tudo com a dedica&ccedil;&atilde;o que voc&ecirc; e sua fam&iacute;lia merecem.</p>\r\n<h3>\r\n	Miss&atilde;o da Empresa</h3>\r\n<p>\r\n	Oferecer solu&ccedil;&otilde;es de qualidade em pisos, revestimentos, cortinas, persianas, papel de parede e carpetes, para nossos clientes, estabelecendo parcerias s&oacute;lidas e confi&aacute;veis obtendo o melhor retorno econ&ocirc;mico, social e humano para nossos colaboradores.</p>','equipe qualificada, equipamentos de tecnologia, soluções, revestimentos, cortinas, persianas, papel de parede, carpetes','Oferecer soluções de qualidade em pisos, revestimentos, cortinas, persianas, papel de parede e carpetes, para nossos clientes, estabelecendo parcerias sólidas e confiáveis obtendo o melhor retorno econômico, social e humano para nossos colaboradores.','SIM',0);
+/*!40000 ALTER TABLE `tb_empresa` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tb_galeria_acessorio`
+--
+
+DROP TABLE IF EXISTS `tb_galeria_acessorio`;
+CREATE TABLE `tb_galeria_acessorio` (
+  `idgaleria` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_acessorio` int(10) unsigned NOT NULL,
+  `imagem` varchar(45) NOT NULL,
+  `ativo` varchar(3) NOT NULL DEFAULT 'SIM',
+  `ordem` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`idgaleria`),
+  KEY `FK_tb_galeria_acessorio_1` (`id_acessorio`),
+  CONSTRAINT `FK_tb_galeria_acessorio_1` FOREIGN KEY (`id_acessorio`) REFERENCES `tb_acessorios` (`idacessorio`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_galeria_acessorio`
+--
+
+/*!40000 ALTER TABLE `tb_galeria_acessorio` DISABLE KEYS */;
+INSERT INTO `tb_galeria_acessorio` (`idgaleria`,`id_acessorio`,`imagem`,`ativo`,`ordem`) VALUES 
+ (1,1,'0604201302291177191615.jpg','SIM',0),
+ (2,1,'0604201302291162858815.jpg','SIM',0);
+/*!40000 ALTER TABLE `tb_galeria_acessorio` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tb_galeria_dica`
+--
+
+DROP TABLE IF EXISTS `tb_galeria_dica`;
+CREATE TABLE `tb_galeria_dica` (
+  `idgaleria` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_dica` int(10) unsigned NOT NULL,
+  `imagem` varchar(45) NOT NULL,
+  `ativo` varchar(3) NOT NULL DEFAULT 'SIM',
+  `ordem` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`idgaleria`),
+  KEY `FK_tb_galeria_dica_1` (`id_dica`),
+  CONSTRAINT `FK_tb_galeria_dica_1` FOREIGN KEY (`id_dica`) REFERENCES `tb_dicas` (`iddica`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_galeria_dica`
+--
+
+/*!40000 ALTER TABLE `tb_galeria_dica` DISABLE KEYS */;
+INSERT INTO `tb_galeria_dica` (`idgaleria`,`id_dica`,`imagem`,`ativo`,`ordem`) VALUES 
+ (3,3,'0604201301181308686619.jpg','SIM',0),
+ (4,3,'0604201301181122652162.jpg','SIM',0),
+ (5,3,'0604201301181243856015.jpg','SIM',0);
+/*!40000 ALTER TABLE `tb_galeria_dica` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tb_galeria_produto`
+--
+
+DROP TABLE IF EXISTS `tb_galeria_produto`;
+CREATE TABLE `tb_galeria_produto` (
+  `idgaleria` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_produto` int(10) unsigned NOT NULL,
+  `imagem` varchar(45) NOT NULL,
+  `ativo` varchar(3) NOT NULL DEFAULT 'SIM',
+  `ordem` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`idgaleria`),
+  KEY `FK_tb_galeria_produto_1` (`id_produto`),
+  CONSTRAINT `FK_tb_galeria_produto_1` FOREIGN KEY (`id_produto`) REFERENCES `tb_produtos` (`idproduto`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_galeria_produto`
+--
+
+/*!40000 ALTER TABLE `tb_galeria_produto` DISABLE KEYS */;
+INSERT INTO `tb_galeria_produto` (`idgaleria`,`id_produto`,`imagem`,`ativo`,`ordem`) VALUES 
+ (1,1,'0604201312491382996395.jpg','SIM',0),
+ (2,1,'0604201312491258088458.jpg','SIM',0),
+ (3,1,'0604201312491409034468.jpg','SIM',0);
+/*!40000 ALTER TABLE `tb_galeria_produto` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tb_grupos_logins`
+--
+
+DROP TABLE IF EXISTS `tb_grupos_logins`;
+CREATE TABLE `tb_grupos_logins` (
+  `idgrupologin` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) DEFAULT NULL,
+  `imagem` varchar(45) DEFAULT NULL,
+  `exibir_menu` varchar(3) DEFAULT 'SIM',
+  `ativo` varchar(3) NOT NULL DEFAULT 'SIM',
+  PRIMARY KEY (`idgrupologin`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tb_grupos_logins`
+--
+
+/*!40000 ALTER TABLE `tb_grupos_logins` DISABLE KEYS */;
+INSERT INTO `tb_grupos_logins` (`idgrupologin`,`nome`,`imagem`,`exibir_menu`,`ativo`) VALUES 
+ (1,'Administradores',NULL,'SIM','SIM'),
+ (9,'Contabilidade',NULL,'SIM','SIM');
+/*!40000 ALTER TABLE `tb_grupos_logins` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tb_grupos_logins_tb_paginas`
+--
+
+DROP TABLE IF EXISTS `tb_grupos_logins_tb_paginas`;
+CREATE TABLE `tb_grupos_logins_tb_paginas` (
+  `id_grupologin` int(11) NOT NULL,
+  `id_pagina` int(11) NOT NULL,
+  PRIMARY KEY (`id_grupologin`,`id_pagina`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tb_grupos_logins_tb_paginas`
+--
+
+/*!40000 ALTER TABLE `tb_grupos_logins_tb_paginas` DISABLE KEYS */;
+INSERT INTO `tb_grupos_logins_tb_paginas` (`id_grupologin`,`id_pagina`) VALUES 
+ (1,148),
+ (1,149),
+ (1,150),
+ (1,151),
+ (1,152),
+ (1,153),
+ (1,154),
+ (1,155),
+ (1,156),
+ (1,157),
+ (1,158),
+ (1,159),
+ (1,160),
+ (1,161),
+ (1,162),
+ (1,163),
+ (1,164),
+ (1,165),
+ (1,166),
+ (1,167),
+ (1,168),
+ (1,169),
+ (1,170),
+ (1,171),
+ (1,172),
+ (1,173),
+ (1,174),
+ (1,175),
+ (1,176),
+ (1,177),
+ (1,178),
+ (1,179),
+ (1,180),
+ (1,181),
+ (1,182),
+ (10,148),
+ (10,149),
+ (10,150),
+ (10,151),
+ (10,152),
+ (10,153),
+ (10,154),
+ (10,155),
+ (10,156),
+ (10,157),
+ (10,158);
+/*!40000 ALTER TABLE `tb_grupos_logins_tb_paginas` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tb_logins`
+--
+
+DROP TABLE IF EXISTS `tb_logins`;
+CREATE TABLE `tb_logins` (
+  `idlogin` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) DEFAULT NULL,
+  `senha` varchar(45) DEFAULT NULL,
+  `ativo` varchar(3) DEFAULT 'SIM',
+  `id_grupologin` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  PRIMARY KEY (`idlogin`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tb_logins`
+--
+
+/*!40000 ALTER TABLE `tb_logins` DISABLE KEYS */;
+INSERT INTO `tb_logins` (`idlogin`,`nome`,`senha`,`ativo`,`id_grupologin`,`email`) VALUES 
+ (1,'Marcio André da Silva','e10adc3949ba59abbe56e057f20f883e','SIM',1,'marciomas@gmail.com'),
+ (2,'David Leandro dos Santos','e10adc3949ba59abbe56e057f20f883e','SIM',1,'design.davidleandro@gmail.com'),
+ (3,'Masmidia','e10adc3949ba59abbe56e057f20f883e','SIM',1,'contato@masmidia.com.br'),
+ (4,'Atendimento Home Web','e10adc3949ba59abbe56e057f20f883e','SIM',1,'atendimento.sites@homewebbrasil.com.br');
+/*!40000 ALTER TABLE `tb_logins` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tb_logs_logins`
+--
+
+DROP TABLE IF EXISTS `tb_logs_logins`;
+CREATE TABLE `tb_logs_logins` (
+  `idloglogin` int(11) NOT NULL AUTO_INCREMENT,
+  `operacao` longtext,
+  `consulta_sql` longtext,
+  `data` date DEFAULT NULL,
+  `hora` time DEFAULT NULL,
+  `id_login` int(11) NOT NULL,
+  PRIMARY KEY (`idloglogin`)
+) ENGINE=InnoDB AUTO_INCREMENT=714 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tb_logs_logins`
+--
+
+/*!40000 ALTER TABLE `tb_logs_logins` DISABLE KEYS */;
+INSERT INTO `tb_logs_logins` (`idloglogin`,`operacao`,`consulta_sql`,`data`,`hora`,`id_login`) VALUES 
+ (687,'CADASTRO DE GRUPO Contabilidade','INSERT INTO	tb_grupos_logins\r\n					(nome)\r\n					VALUES\r\n					(\'Contabilidade\')','2011-12-15','17:25:17',0),
+ (688,'CADASTRO DE GRUPO Buscadores','INSERT INTO	tb_grupos_logins\r\n					(nome)\r\n					VALUES\r\n					(\'Buscadores\')','2011-12-15','17:26:33',0),
+ (689,'ALTERAÇÃO DE GRUPO 10','UPDATE tb_grupos_logins SET nome = \'Buscadores --1 121 654\' WHERE idgrupologin = \'10\'','2011-12-15','17:41:11',0),
+ (690,'ALTERAÇÃO DE GRUPO 10','UPDATE tb_grupos_logins SET nome = \'Buscadores\' WHERE idgrupologin = \'10\'','2011-12-15','17:41:48',0),
+ (691,'EXCLUSÃO DO GRUPO COD: 10, NOME: Buscadores','DELETE FROM tb_grupos_logins WHERE idgrupologin = \'10\'','2011-12-15','17:43:27',0),
+ (692,'EXCLUSÃO DO GRUPO COD: 10, NOME: ','DELETE FROM tb_grupos_logins WHERE idgrupologin = \'10\'','2011-12-15','17:43:28',0),
+ (693,'EXCLUSÃO DO GRUPO COD: 8, NOME: Testando','DELETE FROM tb_grupos_logins WHERE idgrupologin = \'8\'','2011-12-15','17:43:49',0),
+ (694,'DESATIVOU O GRUPO 9','UPDATE tb_grupos_logins SET ativo = \'NAO\' WHERE idgrupologin = \'9\'','2011-12-15','17:44:49',0),
+ (695,'ATIVOU O GRUPO 9','UPDATE tb_grupos_logins SET ativo = \'SIM\' WHERE idgrupologin = \'9\'','2011-12-15','17:45:08',0),
+ (696,'DESATIVOU O GRUPO 9','UPDATE tb_grupos_logins SET ativo = \'NAO\' WHERE idgrupologin = \'9\'','2011-12-15','17:45:12',0),
+ (697,'ATIVOU O GRUPO 9','UPDATE tb_grupos_logins SET ativo = \'SIM\' WHERE idgrupologin = \'9\'','2011-12-15','17:45:17',0),
+ (698,'CADASTRO DO LOGIN ','INSERT INTO	tb_logins\r\n					(nome, senha, email, id_grupologin)\r\n					VALUES\r\n					(\'\', \'d41d8cd98f00b204e9800998ecf8427e\', \'\', \'\')','2011-12-15','17:51:02',0),
+ (699,'CADASTRO DO LOGIN Andr?','INSERT INTO	tb_logins\r\n					(nome, senha, email, id_grupologin)\r\n					VALUES\r\n					(\'André\', \'e10adc3949ba59abbe56e057f20f883e\', \'marcio@tekan.com.br\', \'1\')','2011-12-15','17:51:47',0),
+ (700,'DESATIVOU O LOGIN 11','UPDATE tb_logins SET ativo = \'NAO\' WHERE idlogin = \'11\'','2011-12-15','17:55:35',0),
+ (701,'ATIVOU O LOGIN 11','UPDATE tb_logins SET ativo = \'SIM\' WHERE idlogin = \'11\'','2011-12-15','17:55:42',0),
+ (702,'ALTERAÇÃO DO LOGIN 11','UPDATE tb_logins SET nome = \'André a\', email = \'marcio@tekan.com.br\', id_grupologin = \'9\' WHERE idlogin = \'11\'','2011-12-15','17:57:51',0),
+ (703,'EXCLUSÃO DO LOGIN 10, NOME: , Email: ','DELETE FROM tb_logins WHERE idlogin = \'10\'','2011-12-15','17:58:00',0),
+ (704,'EXCLUSÃO DO LOGIN 11, NOME: Andr?, Email: marcio@tekan.com.br','DELETE FROM tb_logins WHERE idlogin = \'11\'','2011-12-15','17:58:10',0),
+ (705,'CADASTRO DO CLIENTE ','','2013-04-06','12:32:50',2),
+ (706,'ALTERAÇÃO DO CLIENTE ','','2013-04-06','12:33:30',2),
+ (707,'CADASTRO DO CLIENTE ','','2013-04-06','12:44:08',2),
+ (708,'CADASTRO DO CLIENTE ','','2013-04-06','13:12:41',2),
+ (709,'EXCLUSÃO DO LOGIN 2, NOME: , Email: ','DELETE FROM tb_dicas WHERE iddica = \'2\'','2013-04-06','13:15:34',2),
+ (710,'CADASTRO DO CLIENTE ','','2013-04-06','13:17:25',2),
+ (711,'CADASTRO DO CLIENTE ','','2013-04-06','13:27:53',2),
+ (712,'ALTERAÇÃO DO CLIENTE ','','2013-04-06','13:45:36',2),
+ (713,'ALTERAÇÃO DO CLIENTE ','','2013-04-06','14:30:27',2);
+/*!40000 ALTER TABLE `tb_logs_logins` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tb_modulos_paginas`
+--
+
+DROP TABLE IF EXISTS `tb_modulos_paginas`;
+CREATE TABLE `tb_modulos_paginas` (
+  `idmodulopagina` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) DEFAULT NULL,
+  `icone_imagem` varchar(45) DEFAULT NULL,
+  `ativo` char(3) NOT NULL DEFAULT 'SIM',
+  PRIMARY KEY (`idmodulopagina`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tb_modulos_paginas`
+--
+
+/*!40000 ALTER TABLE `tb_modulos_paginas` DISABLE KEYS */;
+INSERT INTO `tb_modulos_paginas` (`idmodulopagina`,`nome`,`icone_imagem`,`ativo`) VALUES 
+ (1,'Grupos',NULL,'SIM'),
+ (2,'Logins',NULL,'SIM'),
+ (28,'Texto Empresa',NULL,'SIM'),
+ (29,'Produtos',NULL,'SIM'),
+ (30,'Dicas',NULL,'SIM'),
+ (31,'Acessorios',NULL,'SIM');
+/*!40000 ALTER TABLE `tb_modulos_paginas` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tb_paginas`
+--
+
+DROP TABLE IF EXISTS `tb_paginas`;
+CREATE TABLE `tb_paginas` (
+  `idpagina` int(11) NOT NULL AUTO_INCREMENT,
+  `pagina` varchar(255) DEFAULT NULL,
+  `imagem` varchar(45) DEFAULT NULL,
+  `label` varchar(45) DEFAULT NULL,
+  `exibir_menu` varchar(3) DEFAULT 'SIM',
+  `descricao` varchar(255) DEFAULT NULL,
+  `id_modulopagina` int(11) NOT NULL,
+  PRIMARY KEY (`idpagina`)
+) ENGINE=InnoDB AUTO_INCREMENT=183 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tb_paginas`
+--
+
+/*!40000 ALTER TABLE `tb_paginas` DISABLE KEYS */;
+INSERT INTO `tb_paginas` (`idpagina`,`pagina`,`imagem`,`label`,`exibir_menu`,`descricao`,`id_modulopagina`) VALUES 
+ (148,'/admin/grupo/altera.php',NULL,'Alterar','NAO',NULL,1),
+ (149,'/admin/grupo/cadastra.php',NULL,'Cadastrar','SIM',NULL,1),
+ (150,'/admin/grupo/exclui.php',NULL,'Excluir','NAO',NULL,1),
+ (151,'/admin/grupo/lista.php',NULL,'Listar','SIM',NULL,1),
+ (152,'/admin/grupo/permissoes.php',NULL,'Permissões','NAO',NULL,1),
+ (153,'/admin/grupo/ativa_desativa.php',NULL,'Ativar e desativar','NAO',NULL,1),
+ (154,'/admin/login/altera.php',NULL,'Alterar','NAO',NULL,2),
+ (155,'/admin/login/cadastra.php',NULL,'Cadastrar','SIM',NULL,2),
+ (156,'/admin/login/exclui.php',NULL,'Excluir','NAO',NULL,2),
+ (157,'/admin/login/lista.php',NULL,'Listar','SIM',NULL,2),
+ (158,'/admin/login/ativa_desativa.php',NULL,'Ativar e desativar','NAO',NULL,2),
+ (159,'/admin/empresa/altera.php',NULL,'Alterar','NAO',NULL,28),
+ (160,'/admin/empresa/cadastra.php',NULL,'Cadastrar','NAO',NULL,28),
+ (161,'/admin/empresa/exclui.php',NULL,'Excluir','NAO',NULL,28),
+ (162,'/admin/empresa/lista.php',NULL,'Listar','SIM',NULL,28),
+ (163,'/admin/empresa/envia_imagens.php',NULL,'Envia imagens','NAO',NULL,28),
+ (164,'/admin/empresa/ativa_desativa.php',NULL,'Ativar e desativar','NAO',NULL,28),
+ (165,'/admin/produtos/altera.php',NULL,'Alterar','NAO',NULL,29),
+ (166,'/admin/produtos/cadastra.php',NULL,'Cadastrar','SIM',NULL,29),
+ (167,'/admin/produtos/exclui.php',NULL,'Excluir','NAO',NULL,29),
+ (168,'/admin/produtos/lista.php',NULL,'Listar','SIM',NULL,29),
+ (169,'/admin/produtos/envia_imagens.php',NULL,'Envia imagens','NAO',NULL,29),
+ (170,'/admin/produtos/ativa_desativa.php',NULL,'Ativar e desativar','NAO',NULL,29),
+ (171,'/admin/dicas/altera.php',NULL,'Alterar','NAO',NULL,30),
+ (172,'/admin/dicas/cadastra.php',NULL,'Cadastrar','SIM',NULL,30),
+ (173,'/admin/dicas/exclui.php',NULL,'Excluir','NAO',NULL,30),
+ (174,'/admin/dicas/lista.php',NULL,'Listar','SIM',NULL,30),
+ (175,'/admin/dicas/envia_imagens.php',NULL,'Envia imagens','NAO',NULL,30),
+ (176,'/admin/dicas/ativa_desativa.php',NULL,'Ativar e desativar','NAO',NULL,30),
+ (177,'/admin/acessorios/altera.php',NULL,'Alterar','NAO',NULL,31),
+ (178,'/admin/acessorios/cadastra.php',NULL,'Cadastrar','SIM',NULL,31),
+ (179,'/admin/acessorios/exclui.php',NULL,'Excluir','NAO',NULL,31),
+ (180,'/admin/acessorios/lista.php',NULL,'Listar','SIM',NULL,31),
+ (181,'/admin/acessorios/envia_imagens.php',NULL,'Envia imagens','NAO',NULL,31),
+ (182,'/admin/acessorios/ativa_desativa.php',NULL,'Ativar e desativar','NAO',NULL,31);
+/*!40000 ALTER TABLE `tb_paginas` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tb_produtos`
+--
+
+DROP TABLE IF EXISTS `tb_produtos`;
+CREATE TABLE `tb_produtos` (
+  `idproduto` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(80) NOT NULL,
+  `imagem` varchar(80) NOT NULL,
+  `descricao` longtext NOT NULL,
+  `keywords` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `ativo` varchar(3) NOT NULL DEFAULT 'SIM',
+  `ordem` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`idproduto`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_produtos`
+--
+
+/*!40000 ALTER TABLE `tb_produtos` DISABLE KEYS */;
+INSERT INTO `tb_produtos` (`idproduto`,`titulo`,`imagem`,`descricao`,`keywords`,`description`,`ativo`,`ordem`) VALUES 
+ (1,'Cortinas Comuns','0604201312441210181689.jpg','<p>\r\n	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper libero sed orci ultricies condimentum. Sed suscipit mollis mauris, non adipiscing lectus congue ac. In rhoncus, nunc eu laoreet eleifend, justo mauris pulvinar nisi, eget lacinia nulla augue in turpis. Praesent massa mi, pellentesque porta bibendum ac, viverra a quam. Suspendisse ut arcu risus. Aenean eu nulla nibh. Praesent eget mi nulla, eu sagittis nibh. Praesent faucibus imperdiet lectus, consequat ornare neque vehicula ac. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis aliquet vestibulum sem, et faucibus urna semper eget. Donec id enim sit amet massa congue varius mollis nec felis. Nulla posuere tortor congue urna tincidunt id molestie ipsum venenatis. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>','Lorem ipsum dolor sit amet','Lorem ipsum dolor sit amet, consectetur adipiscing elit.','SIM',0);
+/*!40000 ALTER TABLE `tb_produtos` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
