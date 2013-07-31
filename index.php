@@ -97,11 +97,34 @@ $keywords = "";
 	
     <div id="banner">
     
-    
+    	<div id="banner_slider">
+        
+        </div>
     
     </div>
     
     
+   
+   <div class="title_home">
+   		
+        <h1 class="helvetica_700">PRODUTOS EM DESTAQUE</h1>
+    
+   </div>
+   
+   
+   
+   <div class="lista_produtos_home">
+   	
+    	<ul class="lista_produtos">
+        	
+            <li>
+            	
+            </li>
+            
+        </ul>
+    
+   </div>
+   
    
     
 
