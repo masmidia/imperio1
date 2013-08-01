@@ -95,7 +95,7 @@ $config = mysql_fetch_array($result);
 <script src="<?php echo Util::caminho_projeto(); ?>/jquery/cufon-yui.js" language="javascript" type="text/javascript"></script>    
 <script src="<?php echo Util::caminho_projeto(); ?>/fonts/Helvetica_Neue_300-Helvetica_Neue_700.font.js" language="javascript" type="text/javascript"></script>   
 <script type="text/javascript">
-	Cufon.replace('.helvetica_700', { fontWeight: 700 }); // Works without a selector engine
+	Cufon.replace('.helvetica_700, .botao', { fontWeight: 700 }); // Works without a selector engine
 	Cufon.replace('.helvetica_300', { fontWeight: 300 }); // Works without a selector engine
 </script>
 
