@@ -16,7 +16,7 @@ body, img, p, h1, h2, h3, h4, h5, h6, ul, ol, li { margin:0 auto; padding:0 auto
 
 
 /*------------------------------- Body ---------------------------------*/
-body { height:3000px; margin: 0px 0px 0px 0px; padding:0; letter-spacing:-0.01em; list-style:none; overflow-x:hidden; position:relative; background:#fff url(../imgs/bg.jpg) top center no-repeat;}
+body {margin: 0px 0px 0px 0px; padding:0; letter-spacing:-0.01em; list-style:none; overflow-x:hidden; position:relative; background:#fff url(../imgs/bg.jpg) top center no-repeat;}
 
 html { border:0; height:100%;}
 
@@ -28,7 +28,7 @@ input { background-color:transparent; border:none; letter-spacing:0px; }
 
 h1 { font-family: 'PT Sans', sans-serif; font-size:17px; color:#505050; line-height:19px; font-weight: 400; }
 
-
+h2 { font-family: 'Yanone Kaffeesatz', sans-serif; font-size:17px; color:#505050; line-height:19px; font-weight: 400; }
 
 
 p  { font-family: 'PT Sans', sans-serif; font-size:15px; color:#5a5858; line-height:18px; text-align:justify;  }
@@ -91,15 +91,46 @@ a img:hover{/*opacity: 0.8;filter:Alpha(opacity=80);*/-webkit-transition: all 0.
 .lista_produtos li .produtos_image_sombra{width:231px; height:150px; overflow:hidden; position:absolute; background:url(../imgs/sombra_produto.png) top center no-repeat;}
 
 
-.lista_empresa_servicos_dicas{width:980px; overflow:hidden;}
+.lista_empresa_servicos_dicas{width:980px; overflow:hidden; margin-bottom: 63px;}
 .lista_empresa_servicos_dicas ul{overflow:hidden; width:1000px; margin: 0px -6px;}
 .lista_empresa_servicos_dicas ul li{width:315px; height:360px; float:left; overflow:hidden; padding-bottom: 30px; margin: 0px 8px;}
-.lista_empresa_servicos_dicas ul li img{margin:10px 0px;}
+.lista_empresa_servicos_dicas ul li .img{margin:10px 0px;}
 .lista_empresa_servicos_dicas ul li p{height:93px; overflow:hidden;}
-
+.lista_empresa_servicos_dicas ul li .btn_mais{margin:15px 0px 0px 95px;}
 
 
 .botao{width:128px; height:40px; background:#ebe8e8; font-size:17px; color:#2f2f2f; display:table-cell; vertical-align:middle; text-align:center;}
 .botao:hover{background:#ccc;}
 
+
+
+
+.lista_dicas_home{width:100%; overflow:hidden; margin-top:10px;}
+.lista_dicas_home div{width:100%; height:55px; overflow:hidden; margin-bottom:20px;}
+.lista_dicas_home div h1{color:#5a5858;}
+.lista_dicas_home_img{float:left; margin:0px 5px 0px 0px;}
+
+
+
+
+#rodape{width:100%; height:122px; overflow:hidden; background:#000;}
+
+
+#rodape_menu, #rodape_menu a{font-family: 'Yanone Kaffeesatz', sans-serif; color:#FFF; font-size:17px;}
+
+
+#rodape_menu{padding-top:20px; overflow:hidden;}
+#rodape_menu li{float:left; margin-right:5px;}
+#rodape_menu_endereco{height:20px; margin-top:8px; padding-left:20px; background:url(../imgs/img_home.jpg) 0px 0px no-repeat;}
+#rodape_menu_telefone{height:15px; margin-top:8px; padding-left:20px; background:url(../imgs/img_telefone_rodape.jpg) 0px 0px no-repeat;}
+#rodape_menu_endereco p, #rodape_menu_telefone p{font-family: 'Cabin', sans-serif; font-size:14px; color:#FFF;}
+
+
+#rodape_menu_homeweb{width:50px; height:66px; margin: -61px 0px 0px 0px; float: right;}
+
+
+
+
+#rodape_direitos{width:100%; height:25px; background:#8d8eff; text-align:center; }
+#rodape_direitos h2{font-size:15px; color:#FFF; padding-top: 4px;}
 

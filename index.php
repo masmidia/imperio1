@@ -97,8 +97,10 @@ $keywords = "";
 	
     <div id="banner">
     
-    	<div id="banner_slider">
-        
+    	<div id="banner_slider" style="outline:1px solid #F00;">
+        	
+            
+            
         </div>
     
     </div>
@@ -244,7 +246,7 @@ $keywords = "";
    
    
    <div class="lista_empresa_servicos_dicas">
-   
+   		
         <ul>
         	
             <li>
@@ -252,13 +254,15 @@ $keywords = "";
                     <h1 class="helvetica_700">A EMPRESA</h1>
                </div>
               
-               <img src="imgs/img_empresa.jpg" alt="A Empresa" >
+               <img src="imgs/img_empresa.jpg" alt="A Empresa" class="img" >
                	
                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
-                
-               <a href="#" title="Saiba Mais" class="botao" style="margin:0px auto;">
-               		SAIBA MAIS
-               </a> 
+               
+               <div class="btn_mais"> 
+                   <a href="#" title="Saiba Mais" class="botao">
+                        SAIBA MAIS
+                   </a> 
+               </div>
                 
             </li>
             
@@ -267,13 +271,15 @@ $keywords = "";
                     <h1 class="helvetica_700">SERVIÇOS</h1>
                </div>
               
-               <img src="imgs/img_servicos.jpg" alt="Serviços" >
+               <img src="imgs/img_servicos.jpg" alt="Serviços" class="img" >
                	
                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
                 
-               <a href="#" title="Saiba Mais" class="botao">
-               		SAIBA MAIS
-               </a> 
+               <div class="btn_mais"> 
+                   <a href="#" title="Saiba Mais" class="botao">
+                        SAIBA MAIS
+                   </a> 
+               </div>
                 
             </li>
             
@@ -281,14 +287,33 @@ $keywords = "";
             	<div class="title_home">
                     <h1 class="helvetica_700">DICAS</h1>
                </div>
-              
-               <img src="imgs/img_empresa.jpg" alt="A Empresa" >
-               	
-               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
-                
-               <a href="#" title="Saiba Mais" class="botao">
-               		SAIBA MAIS
-               </a> 
+              	
+               <div class="lista_dicas_home">
+               		<div>
+               			<a href="#" title="">
+                             <img src="imgs/exemplo_dicas.jpg" alt="" class="lista_dicas_home_img">
+                            <h1>Lorem Ipsum is simply dummy text the printing an</h1>
+                    	</a>
+                    </div>
+                    <div>
+               			<a href="#" title="">
+                             <img src="imgs/exemplo_dicas.jpg" alt="" class="lista_dicas_home_img">
+                            <h1>Lorem Ipsum is simply dummy text the printing an</h1>
+                    	</a>
+                    </div>
+                    <div>
+               			<a href="#" title="">
+                             <img src="imgs/exemplo_dicas.jpg" alt="" class="lista_dicas_home_img">
+                            <h1>Lorem Ipsum is simply dummy text the printing an</h1>
+                    	</a>
+                    </div>
+                    <div>
+               			<a href="#" title="">
+                             <img src="imgs/exemplo_dicas.jpg" alt="" class="lista_dicas_home_img">
+                            <h1>Lorem Ipsum is simply dummy text the printing an</h1>
+                    	</a>
+                    </div>
+               </div>	
                 
             </li>
             
@@ -302,6 +327,86 @@ $keywords = "";
    
     
 
+</div>
+
+
+
+
+
+
+<div id="rodape">
+
+	<div class="container">
+    	
+    	<ul id="rodape_menu">
+        	<li>
+                <a href="<?php echo Util::caminho_projeto() ?>" title="HOME">
+                    HOME
+                </a>
+            </li>
+            <li>|</li>
+            <li>
+                <a href="<?php echo Util::caminho_projeto() ?>/a-empresa" title="A EMPRESA">
+                    A EMPRESA
+                </a>
+            </li>
+            <li>|</li>
+            <li>
+                <a href="<?php echo Util::caminho_projeto() ?>/perfil" title="PERFIL">
+                    PERFIL
+                </a>
+            </li>
+            <li>|</li>
+            <li>
+                <a href="<?php echo Util::caminho_projeto() ?>/produtos" title="PRODUTOS">
+                    PRODUTOS
+                </a>
+            </li>
+            <li>|</li>
+            <li>
+                <a href="<?php echo Util::caminho_projeto() ?>/servicos" title="SERVIÇOS">
+                    SERVIÇOS
+                </a>
+            </li>
+            <li>|</li>
+            <li>
+                <a href="<?php echo Util::caminho_projeto() ?>/dicas" title="DICAS">
+                    DICAS
+                </a>
+            </li>
+            <li>|</li>
+            <li>
+                <a href="<?php echo Util::caminho_projeto() ?>/fale-conosco" title="FALE CONOSCO">
+                    FALE CONOSCO
+                </a>
+            </li>
+        </ul>
+        
+        
+        <div id="rodape_menu_endereco">
+        	<p>Rua 09 N° 848, St. Oeste - Goiânia/GO</p>
+        </div>
+        
+        <div id="rodape_menu_telefone">
+        	<p>(62) 3931-9400  </p>
+        </div>
+        
+        
+        <div id="rodape_menu_homeweb">
+        	
+            <a href="http://www.homewebbrasil.com.br" title="HomeWebBrasil" target="_blank">
+            	<img src="<?php echo Util::caminho_projeto() ?>/imgs/logo_home_web.jpg" alt="HomeWebBrasil">
+            </a>
+            
+        </div>
+        
+    </div>
+    
+    
+  	<div id="rodape_direitos">
+    	<h2>TODOS OS DIREITOS RESERVADOS</h2>
+    </div>  
+	
 </div>
 
 
