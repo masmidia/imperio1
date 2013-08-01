@@ -21,6 +21,22 @@ $keywords = "";
 
 
 
+<!--	====================================================================================================	 -->	
+<!--	SLIDER	 -->
+<!--	====================================================================================================	 -->
+<script type="text/javascript">
+$(function() {
+    $('#banner_slider').cycle({
+        fx:     'fade',
+        speed:  1000,
+        timeout: 3000,
+        pager:  '#nav',
+		slideExpr: 'img'
+    });
+});
+</script>
+
+
 </head>
 
 <body>
@@ -81,9 +97,10 @@ $keywords = "";
                 </li>
             </ul>
             
+            
         </div>
     
-     
+    
     
     	<div id="topo_telefone">
 	
@@ -91,17 +108,21 @@ $keywords = "";
         
         </div>
         
-    </div> 
+    </div>
 
 
 	
     <div id="banner">
     
-    	<div id="banner_slider" style="outline:1px solid #F00;">
-        	
-            
-            
+    	<div id="banner_slider">
+            	
+            <img src="imgs/banners_1.jpg" alt="">
+            <img src="imgs/banners_2.jpg" alt="">
+            <img src="imgs/banners_3.jpg" alt="">
+             
         </div>
+        
+        <div id="nav"></div>
     
     </div>
     
